@@ -1,0 +1,2 @@
+Basic POM with page chaining
+Reading username and password from data.properties
