@@ -29,7 +29,7 @@ public class AccountLoginTest extends Base {
 
 	}
 
-	@Test(priority = 1 , dataProvider = "gettingExcelData")
+	@Test(priority = 1 , dataProvider = "gettingExcelData",groups={"smoke"})
 	public void accountLoginFunctionalityValidation(String uname,String passwd, String status) throws InterruptedException {
 		//System.out.println(uname+"  "+passwd);
 		//myAccount = accountLogin.loginFunctionality(prop.getProperty("email12"), prop.getProperty("password12"));
@@ -47,7 +47,7 @@ public class AccountLoginTest extends Base {
 		
 	}
 
-	@BeforeMethod
+	@BeforeMethod(groups={"smoke"})
 	public void setUp() throws IOException, InterruptedException {
 		driver = initializeDriver();
 		yourStore = new YourStore(driver);
@@ -57,7 +57,7 @@ public class AccountLoginTest extends Base {
 
 	}
 
-	@AfterMethod
+	@AfterMethod(groups={"smoke"})
 	public void tearDown() {
 		driver.quit();
 

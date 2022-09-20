@@ -23,21 +23,21 @@ public class YourStoreTest extends Base {
 		Assert.assertEquals(yourStoreTitle1, prop.getProperty("yourStoreTitleDp"));
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1,groups={"smoke"})
 	public void navigateToLoginPageValidation() {
 		accountLogin=yourStore.navigateToLoginPage();
 		String accountLoginTitle1 = accountLogin.getAccountLoginTitle();
 		Assert.assertEquals(accountLoginTitle1, prop.getProperty("accountLoginTitleDp"));
 	}
 
-	@BeforeMethod
+	@BeforeMethod(groups={"smoke"})
 	public void setUp() throws IOException {
 		driver = initializeDriver();
 		yourStore = new YourStore(driver);
 
 	}
 
-	@AfterMethod
+	@AfterMethod(groups={"smoke"})
 	public void tearDown() {
 		driver.quit();
 

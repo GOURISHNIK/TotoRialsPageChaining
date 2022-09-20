@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" name="Test1(failed)">
+    <groups>
+      <run>
+        <include name="smoke"/>
+      </run>
+    </groups>
     <classes>
       <class name="tests.AccountLoginTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-          <include name="accountLoginFunctionalityValidation"/>
+          <include name="accountLoginFunctionalityValidation" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- tests.AccountLoginTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -27,7 +27,7 @@ public class MyAccountTest extends Base {
 	}
 	
 
-	@BeforeMethod
+	@BeforeMethod(groups={"smoke"})
 	public void setUp() throws IOException, InterruptedException {
 		driver = initializeDriver();
 		yourStore = new YourStore(driver);
@@ -39,7 +39,7 @@ public class MyAccountTest extends Base {
 
 	}
 
-	@AfterMethod
+	@AfterMethod(groups={"smoke"})
 	public void tearDown() {
 		driver.quit();
 
