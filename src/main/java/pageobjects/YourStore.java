@@ -7,8 +7,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import resources.Base;
+import util.WindowsHandling;
 
-public class YourStore{
+public class YourStore extends WindowsHandling{
 
 	public WebDriver driver;
 
@@ -45,6 +46,16 @@ public class YourStore{
 		MyAccount.click();
 		LoginOption.click();
 		return new AccountLogin(driver);
+	}
+	
+	
+	
+	@FindBy(linkText="Open a popup window")
+	WebElement popUpLink;
+	
+	public void popUpLinkClick() {
+		mouseOverElementClick(driver,popUpLink);
+		
 	}
 	
 	
